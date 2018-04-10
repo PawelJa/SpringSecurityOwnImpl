@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.ssdemo.entity.User;
 import pl.ssdemo.repository.UserRepository;
+import pl.ssdemo.security.MyUserDetailsService;
 
 @Controller
 public class TestController {
@@ -13,8 +14,14 @@ public class TestController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    MyUserDetailsService myUserDetailsService;
+
     @GetMapping("/test")
     public String test() {
+        User user = userRepository.findOneByUsername("Paul");
+        System.out.println(user);
+        myUserDetailsService.loadUserByUsername("Paul");
         return "test";
     }
 
