@@ -17,7 +17,8 @@ public class User implements Serializable {
 
     private boolean enabled;
 
-    private String role;
+    @OneToOne
+    private UserRole userRole = new UserRole();
 
     public long getId() {
         return id;
@@ -43,20 +44,20 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public boolean isEnabled() {
         return enabled;
     }
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 
     public User() {
@@ -68,7 +69,8 @@ public class User implements Serializable {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
+                ", enabled=" + enabled +
+                ", userRole=" + userRole +
                 '}';
     }
 }
