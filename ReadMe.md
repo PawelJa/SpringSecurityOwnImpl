@@ -1,1 +1,1 @@
-Spring Sceurity MVC Hibernate Own Implementation (without Spring Boot)
+Spring Security MVC Hibernate Own Implementation (without Spring Boot)
