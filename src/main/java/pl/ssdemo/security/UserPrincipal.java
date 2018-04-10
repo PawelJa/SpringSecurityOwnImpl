@@ -24,7 +24,7 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(user.getRole());
+        GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_" + user.getUserRole().getRole());
         Set<GrantedAuthority> grantedAuthoritySet = new HashSet<>();
         grantedAuthoritySet.add(grantedAuthority);
         return grantedAuthoritySet;
