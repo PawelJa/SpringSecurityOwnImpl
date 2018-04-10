@@ -38,6 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/test/**").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasRole("USER")
+                .antMatchers("/mod/**").hasRole("MOD")
                 .and().formLogin().permitAll()
                 //login configuration
 //                .loginPage("/customLogin.jsp")

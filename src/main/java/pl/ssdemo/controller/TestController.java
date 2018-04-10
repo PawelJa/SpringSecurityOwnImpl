@@ -65,4 +65,20 @@ public class TestController {
         System.out.println(user);
         return "dodano uzytkownika";
     }
+
+    @GetMapping("/newuser3")
+    @ResponseBody
+    public String newUser3() {
+        User user = new User();
+        user.setUsername("Paul3");
+        user.setPassword(bCryptPasswordEncoder.encode("abc1234"));
+        user.setEnabled(true);
+        UserRole userRole = new UserRole();
+        userRole.setRole("MOD");
+        user.setUserRole(userRole);
+        userRoleRepository.save(userRole);
+        userRepository.save(user);
+        System.out.println(user);
+        return "dodano uzytkownika";
+    }
 }
