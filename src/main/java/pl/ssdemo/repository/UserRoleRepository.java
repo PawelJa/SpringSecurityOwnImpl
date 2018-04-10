@@ -1,9 +1,9 @@
 package pl.ssdemo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.ssdemo.entity.User;
+import pl.ssdemo.entity.UserRole;
 
-public interface UserRepository extends JpaRepository <User, Long>{
+public interface UserRoleRepository extends JpaRepository <UserRole, Long>{
 
-    public User findOneByUsername(String username);
+//    public UserRole findOneByUsername(String username);
 }
